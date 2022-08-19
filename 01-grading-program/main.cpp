@@ -12,20 +12,31 @@ the user that they scored an A
 
 int main() {
     unsigned int grade;
-    std::string response;
+    std::string letterGrade;
 
     std::cout << "Enter your grade: \n";
 
     std::cin >> grade;
+    
+    switch (grade) {
+        case 90 ... 100:
+            letterGrade = "A";
+            break;
+        case 80 ... 89:
+            letterGrade = "B";
+            break;
+        case 70 ... 79:
+            letterGrade = "C";
+            break;
+        case 60 ... 69:
+            letterGrade = "D";
+            break;
+        default:
+            letterGrade = "F";
+            break;
+    }
 
-    if (grade < 0 || grade > 100)
-        response = "That's not possible!";
-    else if (grade >= 90 && grade <= 100)
-        response = "You've scored an A!";
-    else
-        response = "You can do better.";
-
-    std::cout << response << "\n";
+    std::cout << "Your letter grade is: " << letterGrade << "\n";
 
     return 0;
 }
