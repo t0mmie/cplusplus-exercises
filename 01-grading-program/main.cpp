@@ -20,8 +20,8 @@ int main() {
 
     if (grade < 0 || grade > 100)
         response = "That's not possible!";
-    else if (grade == 100)
-        response = "That's a perfect score!";
+    else if (grade >= 90 && grade <= 100)
+        response = "You've scored an A!";
     else
         response = "You can do better.";
 
