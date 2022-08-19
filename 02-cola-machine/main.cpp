@@ -12,41 +12,24 @@ a switch statement, modify it to use if/else-if statements.
 it will output "Error. choice was not valid, here is your money back."*/
 
 int main() {
+    std::string beverages [5] = { "Coke", "Water", "Sprite", "Fanta", "Beer" };
     unsigned int choice;
-    std::string beverage;
 
     std::cout << "Choose your beverage: \n";
-    std::cout << "1) Coke\n";
-    std::cout << "2) Water\n";
-    std::cout << "3) Sprite\n";
-    std::cout << "4) Fanta\n";
-    std::cout << "5) Beer\n";
+
+    for ( int n = 0 ; n < 5 ; ++n ) {
+        std::cout << ( n + 1 ) << ") " << beverages[n] << "\n";
+    }
     
     std::cin >> choice;
 
-    switch (choice) {
-        case 1:
-            beverage = "Coke";
-            break;
-        case 2:
-            beverage = "Water";
-            break;
-        case 3:
-            beverage = "Sprite";
-            break;
-        case 4:
-            beverage = "Fanta";
-            break;
-        case 5:
-            beverage = "Beer";
-            break;
-        default:
-            std::cout << "Error. choice was not valid, here is your money back.\n";
+    if (choice < 1 || choice > 5) {
+        std::cout << "Error. choice was not valid, here is your money back.\n";
 
-            return 0;
+        return 0;
     }
 
-    std::cout << "You've chosen " << beverage << "\n";
+    std::cout << "You've chosen " << beverages[choice - 1] << "\n";
     
     return 0;
 }
