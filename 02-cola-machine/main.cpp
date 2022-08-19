@@ -24,20 +24,26 @@ int main() {
     
     std::cin >> choice;
 
-    if (choice == 1) {
-        beverage = "Coke";
-    } else if (choice == 2) {
-        beverage = "Water";
-    } else if (choice == 3) {
-        beverage = "Sprite";
-    } else if (choice == 4) {
-        beverage = "Fanta";
-    } else if (choice == 5) {
-        beverage = "Beer";
-    } else {
-        std::cout << "Error. choice was not valid, here is your money back.\n";
+    switch (choice) {
+        case 1:
+            beverage = "Coke";
+            break;
+        case 2:
+            beverage = "Water";
+            break;
+        case 3:
+            beverage = "Sprite";
+            break;
+        case 4:
+            beverage = "Fanta";
+            break;
+        case 5:
+            beverage = "Beer";
+            break;
+        default:
+            std::cout << "Error. choice was not valid, here is your money back.\n";
 
-        return 0;
+            return 0;
     }
 
     std::cout << "You've chosen " << beverage << "\n";
