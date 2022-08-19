@@ -17,8 +17,16 @@ they were asked not to.) */
 
 int main() {
     unsigned int number;
+    unsigned int i = 0;
 
     do {
+        if (i == 9) {
+            std::cout << "Wow, you're more patient then I am, you win.\n";
+
+            return 0;
+        }
+        i++;
+
         std::cout << "Enter any number other than 5:\n";
         
         std::cin >> number;
