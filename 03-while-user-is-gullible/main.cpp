@@ -20,19 +20,14 @@ int main() {
     unsigned int i = 0;
 
     do {
-        if (i == 9) {
-            std::cout << "Wow, you're more patient then I am, you win.\n";
-
-            return 0;
-        }
-        i++;
-
-        std::cout << "Enter any number other than 5:\n";
+        std::cout << "Please enter any number other than " << i << ":\n";
         
         std::cin >> number;
-    } while (number != 5);
 
-    std::cout << "Hey! you weren't supposed to enter 5!\n";
+        i++;
+    } while (number != (i - 1));
+
+    std::cout << "Hey! you weren't supposed to enter " << (i - 1) << "!\n";
     
     return 0;
 }
